@@ -7,19 +7,19 @@ namespace MyGame
         private const int WindowWidth = 800;
         private const int WindowHeight = 600;
 
-        private const string WindowTitle = "Sigma Game";
+        private const string WindowTitle = "Fortnite part 2";
 
         private static void Main(string[] args)
         {
             // Initialize the game.
-            Game.Initialize(WindowWidth, WindowHeight, WindowTitle);
+            GameEngine.Game.Initialize(WindowWidth, WindowHeight, WindowTitle);
 
             // Create our scene.
             GameScene scene = new GameScene();
-            Game.SetScene(scene);
+            GameEngine.Game.SetScene(scene);
 
             // Run the game loop.
-            Game.Run();
+            GameEngine.Game.Run();
         }
     }
 }

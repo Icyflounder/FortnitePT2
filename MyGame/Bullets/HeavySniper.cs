@@ -3,7 +3,7 @@ using SFML.Graphics;
 using SFML.System;
 namespace MyGame
 {
-    class Laser : GameObject
+    class HeavySniper : GameObject
     {
         public override FloatRect GetCollisionRect()
         {
@@ -11,21 +11,21 @@ namespace MyGame
         }
         private const float Speed = 1f;
         private readonly Sprite _sprite = new Sprite();
-        public Laser(Vector2f pos)
+        public HeavySniper(Vector2f pos)
         {
-            _sprite.Texture = Game.GetTexture("../../../Resources/laser.png");
+            _sprite.Texture = GameEngine.Game.GetTexture("../../../Resources/laser.gif");
             _sprite.Position = pos;
-            AssignTag("laser");
+            AssignTag("bulletHeavySniper");
         }
         public override void Draw()
         {
-            Game.RenderWindow.Draw(_sprite);
+            GameEngine.Game.RenderWindow.Draw(_sprite);
         }
         public override void Update(Time elapsed)
         {
             int msElapsed = elapsed.AsMilliseconds();
             Vector2f pos = _sprite.Position;
-            if (pos.X > Game.RenderWindow.Size.X)
+            if (pos.X > GameEngine.Game.RenderWindow.Size.X)
             {
                 MakeDead();
             }
